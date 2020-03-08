@@ -4,109 +4,123 @@
             <link href="assets/normalize.css" rel="stylesheet">
             <link href="assets/icon.png" rel="icon" type="image/png">
             <style>
+
+
+                :root {
+                    --color-highlight: #ff6c7d;
+                    --color-text-primary: #000;
+                    --color-text-secondary: #fff;
+                    --background-color-body: #fff;
+                    --background-color-header: #fff;
+                    --background-color-article: var(--color-highlight);
+                    --background-color-footer: var(--color-highlight);
+                    --border-color: #fff;
+                    --font--primary: 'Playfair Display',serif;
+                    --font--secondary: 'Roboto',sans-serif;
+                    --border-size: 2em;
+
+                }
+
+
                 * {
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
                 }
 
+                html {
+                    border: var(--border-size) solid var(--border-color);
+                    background-color: var(--border-color);
+                }
+
                 body {
-                    font-family: 'Roboto',sans-serif;
-                    background: #0eb69aff;
-                    border: 2em solid #1bbeccff;
-                }
-
-                *,.table,.table-cell,p {
-                    margin: 0;
-                    padding: 0;
-                }
-
-                p {
-                    margin-block-start: 0;
-                    margin-block-end: 0;
-                    margin-inline-start: 0;
-                    margin-inline-end: 0;
+                    background-color: var(--background-color-body);
                 }
 
                 .table {
                     display: table;
                     width: 100%;
-                    margin: 0 auto;
                 }
 
-                .table-cell {
-                    display: table-cell;
-                    vertical-align: middle;
-                    text-align: center;
-                }
+                    .table .table-cell {
+                        display: table-cell;
+                        vertical-align: middle;
+                        text-align: center;
+                    }
+
+                    .table .table-content {
+                        max-width: 760px;
+                        display: inline-block;
+                        margin: 0 auto;
+                    }
 
                 header {
-                    height: 45%;
-                    background-color: #fff;
-                    position: relative;
-                }
-
-
-                .headline {
-                    font-size: 4em;
-                    font-family: 'Playfair Display',serif;
-                    font-weight: 400;
-                    visibility: hidden;
-                    overflow: visible;
-                }
-
-                .headline:before {
-                    content: '';
-                    visibility: visible;
-                    display: block;
                     height: 50%;
-                    background-repeat: no-repeat;
-                    background-image: url(assets/logo.svg);
-                    background-position: center;
-                    overflow: visible;
-                    max-height: 240px;
+                    background-color: var(--background-color-header);
                 }
 
-                article,footer {
-                    height: 40%;
-                    max-width: 920px;
+                    header .headline {
+                        visibility: hidden;
+                        color: var(--color-text-primary);
+                        font-family: var(--font--primary);
+                    }
+
+                    header .headline:before {
+                        content: '';
+                        visibility: visible;
+                        display: block;
+                        height: 50%;
+                        background-repeat: no-repeat;
+                        background-image: url(assets/logo.svg);
+                        background-position: center;
+                        overflow: visible;
+                        max-height: 240px;
+                    }
+
+                article {
+                    height: 35%;
+                    background-color: var(--background-color-article);
                 }
+
+                    article .claim {
+                        font-size: 2em;
+                        line-height: 1.2em;
+                        padding: 0 1.5em;
+                        color: var(--color-text-secondary);
+                        font-family: var(--font--secondary);
+                        margin-block-start: 0;
+                        margin-block-end: 0;
+                        margin-inline-start: 0;
+                        margin-inline-end: 0;
+                    }
 
                 footer {
-                    height: 10%;
+                    height: 15%;
+                    background-color: var(--background-color-footer);
+                    color: var(--color-text-secondary);
+                    font-family: var(--font--secondary);
                 }
 
-                body,footer a,footer a:active,footer a:hover,footer a:visited {
-                    color: #fff;
-                }
+                    footer .about-us {
+                        font-size: 1.2em;
+                        line-height: 1.4em;
+                    }
 
-                footer a:hover {
-                    text-decoration: none;
-                }
-
-                .claim {
-                    text-align: center;
-                    font-size: 2.5em;
-                    line-height: 1.5em;
-                    padding: 1.5em;
-                    margin: 0 auto;
-                }
-
-                .about-us {
-                    font-size: 1.5em;
-                    line-height: 1.3em;
-                }
-
-                .em {
-                    font-family: 'Playfair Display',serif;
-                    font-weight: 700;
-                }
+                    footer .em {
+                        font-family: 'Playfair Display',serif;
+                        font-weight: 700;
+                    }
+                    
+                    footer a:hover, footer a,footer a:active,footer a:hover,footer a:visited {
+                        color: var(--color-text-secondary);
+                        text-decoration: none;
+                    }
 
                 @media (min-width:920px) and (orientation:portrait) {
                     body {
-                        font-size: 125%;
+                        font-size: 150%;
                     }
                 }
-              
+
             </style>
     </head>
     <body>
@@ -115,16 +129,20 @@
         </header>
         <article class="table">
             <p class="claim table-cell">
-                It is our mission to step-up life quality by connecting the ideal organisation to a talents true identity. 
+                <span class="table-content">
+                    It is our mission to step-up life quality by connecting the ideal organisation to a talents true identity. 
+                </span>
             </p>
         </article>
         <footer class="table">
             <p class="about-us table-cell">
-                <span class="em">Human Relations</span><br/>are 
-                <a href="https://www.linkedin.com/in/anna-gottschalg/">Anna</a>, 
-                Daniel, 
-                <a href="https://www.linkedin.com/in/hannesstein/">Hannes</a> and 
-                <a href="https://www.linkedin.com/in/sveneisenschmidt/">Sven</a>. 
+                <span class="table-content">
+                    <span class="em">Human Relations</span><br/>are 
+                    <a href="https://www.linkedin.com/in/anna-gottschalg/">Anna</a>, 
+                    Daniel, 
+                    <a href="https://www.linkedin.com/in/hannesstein/">Hannes</a> and 
+                    <a href="https://www.linkedin.com/in/sveneisenschmidt/">Sven</a>. 
+                </span>
             </p>
         </footer>
     </body>
